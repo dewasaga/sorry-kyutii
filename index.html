@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Maafin Aku Ya, Pija? ❤️</title>
+		<style>
+			:root {
+				--pink: #ffb6c1;
+				--blue: #add8e6;
+				--dark: #333;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				background: linear-gradient(135deg, var(--blue), var(--pink));
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				text-align: center;
+				color: var(--dark);
+			}
+
+			.container {
+				background: rgba(255, 255, 255, 0.9);
+				width: 90%;
+				max-width: 400px;
+				height: 80vh;
+				border-radius: 20px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 20px;
+			}
+
+			.slide {
+				display: none;
+				flex-direction: column;
+				align-items: center;
+				animation: fadeIn 0.8s ease-in-out;
+				width: 100%;
+			}
+
+			.slide.active {
+				display: flex;
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(10px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			h1,
+			h2 {
+				color: #d14777;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 1.5;
+				margin-bottom: 20px;
+			}
+
+			.photo-box {
+				width: 200px;
+				height: 200px;
+				background-color: #eee;
+				border-radius: 15px;
+				border: 3px dashed #ff99aa;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 20px;
+				object-fit: cover;
+			}
+
+			button {
+				background-color: #d14777;
+				color: white;
+				border: none;
+				padding: 12px 25px;
+				border-radius: 25px;
+				font-size: 16px;
+				cursor: pointer;
+				box-shadow: 0 4px 15px rgba(209, 71, 119, 0.4);
+				transition:
+					transform 0.2s,
+					background-color 0.2s;
+			}
+
+			button:hover {
+				background-color: #b53860;
+				transform: scale(1.05);
+			}
+
+			.wa-btn {
+				background-color: #25d366;
+				box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+				text-decoration: none;
+				padding: 12px 25px;
+				border-radius: 25px;
+				color: white;
+				font-weight: bold;
+				display: inline-block;
+			}
+
+			.wa-btn:hover {
+				background-color: #1ebe57;
+				transform: scale(1.05);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Audio ditaruh di sini, ganti src dengan file lagu kamu -->
+		<audio id="bgm" src="shape-of-my-heart.mp3" loop></audio>
+
+		<div class="container">
+			<!-- COVER / START -->
+			<div class="slide active" id="slide-0">
+				<h1>Halo, Kyutii! 🌸</h1>
+				<p>
+					buat <i>the most pretty girl in the world yang paling GORGEOUS</i>.
+				</p>
+				<button onclick="startJourney()">Buka Pesannya</button>
+			</div>
+
+			<!-- SLIDE 1 -->
+			<div class="slide" id="slide-1">
+				<img src="FOTO_PIJA_1.jpeg" alt="Foto Pija" class="photo-box" />
+				<h2>Buat Pija My Pretty Girl,</h2>
+				<p>Aku tau kamu lagi bete banget sama aku, dan aku sadar aku salah.</p>
+				<button onclick="nextSlide(2)">Lanjut >></button>
+			</div>
+
+			<!-- SLIDE 2 -->
+			<div class="slide" id="slide-2">
+				<img src="FOTO_PIJA_2.jpeg" alt="Foto Pija" class="photo-box" />
+				<p>
+					Maafin aku ya udah bikin kamu kesel karena terus-terusan maksa kamu
+					konsul ke dosen. Niat aku cuma mau liat kamu cepet kelar, tapi caraku
+					malah bikin kamu kesel gini yangg.
+				</p>
+				<button onclick="nextSlide(3)">Lanjut >></button>
+			</div>
+
+			<!-- SLIDE 3 (Sebelum Akhir - Foto cowok filter bunga) -->
+			<div class="slide" id="slide-3">
+				<img
+					src="FOTO_BUNGA.jpeg"
+					alt="Foto Kamu Filter Bunga"
+					class="photo-box" />
+				<h2>Jangan marah lagi dong...</h2>
+				<p>
+					Nih, aku pake filter bunga biar kamu ketawa. Pacarmu yang nyebelin ini
+					beneran nyesel dan minta maaf banget ke kamu sayanggkuu cintakuuuu.
+					Aku Sayanggg Bangett sama kamuuu cintakkuuu ❤️
+				</p>
+				<button onclick="nextSlide(4)">Lanjut >></button>
+			</div>
+
+			<!-- SLIDE 4 (Akhir - Foto berdua & Tombol WA) -->
+			<div class="slide" id="slide-4">
+				<img src="FOTO_BERDUA.jpeg" alt="Foto Berdua" class="photo-box" />
+				<p><strong>AKU SAYANG KAMU</strong></p>
+				<p><strong>LOVE U SAYANGGKUU CINTAKUU CANTIKKUUU</strong></p>
+				<p><strong>Besok aku punya kejutan kecil buat kamu.</strong></p>
+				<p>Jadi... dimaafin kan? 🥺</p>
+				<!-- Ganti 628XXXXXXXXXX dengan nomor WA kamu (pakai 62, jangan 0) -->
+				<a
+					href="https://wa.me/628XXXXXXXXXX?text=IYA%20AKU%20MAAFIN%20SAYANGKKU%20CINTAKU%20GANTENGKU"
+					class="wa-btn"
+					target="_blank"
+					>Maafin Dong ❤️</a
+				>
+			</div>
+		</div>
+
+		<script>
+			// Fungsi untuk mulai lagu dan masuk ke slide 1
+			function startJourney() {
+				var audio = document.getElementById("bgm");
+				audio.play();
+				nextSlide(1);
+			}
+
+			// Fungsi untuk pindah slide
+			function nextSlide(slideNumber) {
+				// Sembunyikan semua slide
+				var slides = document.querySelectorAll(".slide");
+				slides.forEach(function (slide) {
+					slide.classList.remove("active");
+				});
+
+				// Tampilkan slide yang dituju
+				var nextSlide = document.getElementById("slide-" + slideNumber);
+				nextSlide.classList.add("active");
+			}
+		</script>
+	</body>
+</html>
